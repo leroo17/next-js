@@ -6,7 +6,7 @@ const getData = () => {
     // return fetch(`https://ozon2025-test-default-rtdb.firebaseio.com/goods.json?${str ? `search=${str}` : ''}`)
     return fetch('https://ozon2025-test-default-rtdb.firebaseio.com/goods.json')
     .then((response) => {
-        console.log(response);
+        // console.log(response);
         return response.json()
     })
     .then(json => json);

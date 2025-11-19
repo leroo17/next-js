@@ -1,16 +1,18 @@
-const getData = () => {
+const postData = (cart) => {
 // const getData = (text) => {
     // console.log(text);
     // return [1, 2, 3, 4, 5];
-    return fetch('http://localhost:3000/goods/23', {
-        method: 'DELETE',
+    // return fetch('http://localhost:3000/goods/23', {
+    //     method: 'DELETE',
 
-    })
-    .then((response) => {
-        console.log(response);
-        return response.json()
-    })
-    .then(json => console.log(json))
+    // })
+    // .then((response) => {
+    //     console.log(response);
+    //     return response.json()
+    // })
+    // .then(json => console.log(json))
+
+
     // return fetch('http://localhost:3000/goods', {
     //     method: 'POST',
     //     body: JSON.stringify({
@@ -30,5 +32,18 @@ const getData = () => {
     //     return response.json()
     // })
     // .then(json => console.log(json))
+
+
+    return fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: JSON.stringify(cart),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
+    .then((response) => {
+        return response.json()
+    })
+    // .then(json => console.log(json))
 };
-export default getData;
+export default postData;
